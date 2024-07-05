@@ -9,6 +9,8 @@ load_dotenv()
 
 # Configurar a chave da API da OpenAI
 openai.api_key = os.getenv('OPENAI_API_KEY')
+# Modelo de linguagem natural para o gerente
+llm = ChatOpenAI(model='gpt-3.5-turbo')
 
 # Define seus agentes
 pesquisador = Agent(
@@ -39,8 +41,7 @@ gerente = Agent(
     allow_delegation=True,
 )
 
-# Modelo de linguagem natural para o gerente
-llm = ChatOpenAI(model='gpt-3.5-turbo')
+
 
 # Configuração da equipe
 equipe = Crew(
@@ -52,3 +53,4 @@ equipe = Crew(
 
 # Iniciar o trabalho da equipe
 resultado = equipe.kickoff()
+print(equipe.usage_metrics)
