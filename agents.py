@@ -40,14 +40,14 @@ gerente = Agent(
 )
 
 # Modelo de linguagem natural para o gerente
-gerente_llm = ChatOpenAI(model='gpt-3.5-turbo')
+llm = ChatOpenAI(model='gpt-3.5-turbo')
 
 # Configuração da equipe
 equipe = Crew(
     agents=[pesquisador, escritor],
     tasks=[tarefa],
     process=Process.hierarchical,
-    manager_llm=gerente_llm
+    manager_llm= llm
 )
 
 # Iniciar o trabalho da equipe
