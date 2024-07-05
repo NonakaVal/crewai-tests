@@ -1,4 +1,5 @@
-crew-lib.iml
+# IntelliJ IDEA
+*.iml
 misc.xml
 modules.xml
 workspaces.xml
